@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-// const db = require('../db') // TODO: Add file path to the database
+// const db = require('../db') 
 
 // //api/v1/trainers
 // router.get('/', (req, res) => {
