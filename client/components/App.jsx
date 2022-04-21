@@ -1,13 +1,16 @@
 import React from 'react'
 import {Routes, Route} from 'react-router-dom'
 
+import Home from './Home'
 
 const App = () => {
 
   return (
-    <div>
-      <h1>Gotta Randomly Select em' all!</h1>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home/>}></Route>
+      </Routes>
+    </>
   
   )
 }
