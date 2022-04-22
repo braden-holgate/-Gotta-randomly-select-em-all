@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { getPokemon } from '../api/pokeApi'
-
+import { useParams } from 'react-router'
 import Pokemon from './Pokemon.jsx'
+import { getTrainers } from '../api/trainerApi'
 const Trainer = () => {
   const [pokedata, setPokeData] = useState([])
   const [trainerData, setTrainerData] = useState([])
