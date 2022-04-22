@@ -1,5 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&family=Outfit:wght@100&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Press+Start+2P&display=swap');
 
-html, body {
-    background-image: url('http://images.shoutwiki.com/en.pokemmo/e/ea/Kanto_Map.jpg')
+.home {
+    height: 100vh;
+    width: 100vw;
+    background-image: url('/images/kanto.png');
+    background-repeat: no-repeat;
+    background-color: #1B7EC9;
+}
+
+.title-container {
+    float: right;
+    padding-right: 20px;
+}
+
+.title {
+    font-family: 'Press Start 2P', sans-serif;
+}
+
+.subtitle {
+    font-family: 'Nanum Brush Script', sans-serif;
+}
+
+.Grace {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 120px;
+    top: 140px;
+    background: linear-gradient(0deg, rgba(195,34,34,1) 0%, rgba(255,0,0,1) 47%, rgba(0,0,0,1) 48%, rgba(0,0,0,1) 52%, rgba(255,255,255,1) 53%, rgba(255,255,255,1) 100%);
+    border-radius: 50%;
+    padding: 20px;
+    display: none;
+}
+
+.Grace:hover {
+    display: block;
+}
+
+.Halmai {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 120px;
+    top: 350px;
+    background-color: red;
+    opacity: 0.5;
+    border-radius: 40%;
+    padding: 20px;
+}
+
+.Lawrence {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 340px;
+    top: 200px;
+    background-color: red;
+    opacity: 0.5;
+    border-radius: 40%;
+    padding: 20px;
 }
