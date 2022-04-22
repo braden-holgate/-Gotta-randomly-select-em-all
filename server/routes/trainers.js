@@ -7,7 +7,6 @@ const db = require('../db/db')
 router.get('/', (req, res) => {
   db.getTrainers()
     .then((trainers) => {
-      console.log(trainers)
       res.json(trainers)
     })
     .catch((err) => {
