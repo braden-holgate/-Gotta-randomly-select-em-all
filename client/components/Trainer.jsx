@@ -10,7 +10,7 @@ const Trainer = () => {
   const [trainerData, setTrainerData] = useState([])
   const params = useParams().id
   const numberData = Number(params)
-  console.log(numberData)
+ 
   const getData = () => {
     getTrainers()
     .then(data => setTrainerData(data[numberData -1]))
