@@ -20,7 +20,7 @@ const Trainer = () => {
     getPokemon()
       .then((data) => {
         console.log(data)
-        if (pokedata.length > 6) {
+        if (pokedata.length > 5) {
           pokedata.pop()
           setPokeData([data, ...pokedata])
         } else {
