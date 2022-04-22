@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import {getPokemon} from '../api/pokeApi'
+import React, { useState } from 'react'
+import { getPokemon } from '../api/pokeApi'
 
 import Pokemon from './Pokemon.jsx'
 const Trainer = () => {
@@ -7,34 +7,29 @@ const Trainer = () => {
 
   const clickHandler = () => {
     getPokemon()
-      .then(data => {
-        // //TODO
-        // if (pokedata.length > 5) {
-          //setPokedata[pokedata[0]=data] 
-          //check array method to replace first pos and shift others up
-        
-          // } else {
-          //setPokeData([...pokedata,data])
-  //       }
-  //       console.log(data);
-  //       setPokeData([...pokedata, data])
-  //       console.log(pokedata);
-  //     }).catch((err) => {
-  //       console.error(err.message)
-  //     })
-  // }
-      }).catch((err) => {
+      .then((data) => {
+        console.log(data)
+        if (pokedata.length > 6) {
+          pokedata.pop()
+          setPokeData([data, ...pokedata])
+        } else {
+          setPokeData([...pokedata, data])
+        }
+        console.log(pokedata)
+      })
+      .catch((err) => {
         console.log(err)
       })
-    }
-    
+  }
+
   return (
     <div>
       <h2>Name: </h2>
       <button onClick={clickHandler}>Get your Pokemon! </button>
-      <Pokemon pokedata={pokedata}/>
+      {pokedata.map((pokemon, i) => {
+        return <Pokemon key={i} pokedata={pokemon} />
+      })}
     </div>
-  
   )
 }
 
