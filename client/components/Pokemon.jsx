@@ -3,7 +3,7 @@ import React from 'react'
 const Pokemon = ({ pokedata}) => {
   return (
     <div className="pokemon-card">
-    <img src={pokedata.sprites.front_default} />
+    <img className='img_poke'src={pokedata.sprites.front_default} />
       <h3>{pokedata.name}</h3>
       <ul>
         <li>Type: {pokedata.types[0].type.name}</li>

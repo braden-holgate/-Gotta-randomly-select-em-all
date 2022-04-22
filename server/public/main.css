@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Press+Start+2P&display=swap');
 
+body {
+    margin: 0;
+}
 .home {
     height: 100vh;
     width: 100vw;
     background-image: url('/images/kanto.png');
     background-repeat: no-repeat;
     background-color: #1B7EC9;
+
 }
 
 .title-container {
@@ -135,3 +139,49 @@
     left: 395px;
     top: 270px;
 }
+
+.poke-container {
+    width: 90%;
+    display: flex;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    background-color: rgb(255, 126, 126);
+    border-radius: 18px;
+}
+
+.pokemon-card { 
+    text-align: left;
+}
+
+.trainer {
+    margin-top: 30px;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(125, 240, 125);
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Press Start 2P', sans-serif;
+    text-align: center;
+}
+
+.trainer h2 {
+    margin-top: 30px;
+}
+
+.img_poke {
+    height: 100px;
+    width: auto;
+}
+button {
+    background-color: #f98b6d; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+  }

@@ -34,15 +34,17 @@ const Trainer = () => {
   }
 
   return (
-    <div>
+    <div className="trainer">
       <h2>{trainerData.name} </h2>
       <p>Type: {trainerData.pokemon_type}</p>
       <p>Home gym: {trainerData.home_gym}</p>
       <p>{trainerData.bio}</p>
       <button onClick={clickHandler}>Get your Pokemon! </button>
-      {pokedata.map((pokemon, i) => {
-        return <Pokemon key={i} pokedata={pokemon} />
-      })}
+      <div className="poke-container">
+        {pokedata.map((pokemon, i) => {
+          return <Pokemon key={i} pokedata={pokemon} />
+        })}
+      </div>
     </div>
   )
 }
