@@ -11,6 +11,7 @@ import { getTrainers } from '../api/trainerApi';
 const Home = () => {
   const navigate = useNavigate()
   const [trainerId, setTrainerId] = useState(null)
+  const [isVisible, setIsVisible] = useState(null)
 
   const [trainerData, setTrainerData] = useState([])
 
@@ -23,7 +24,6 @@ const Home = () => {
 
   const handleClick = (e) => {
     setTrainerId(e.target.id)
-    console.log(e.target.id);
     navigate(`/trainer/${e.target.id}`)
   }
 
@@ -38,10 +38,15 @@ const Home = () => {
         <h2 className='subtitle'>Gotta randomly select em all</h2>
       </div>
       {trainerData.map((trainer) => {
-      return <div className={trainer.name} key={trainer.id} onClick={handleClick} id={trainer.id}>
-        <p>{trainer.name}</p>
-        <p>Type: {trainer.pokemon_type}</p>
-        </div>
+        if (isVisible === trainer.id) {
+          return <div className={trainer.name + '-visible'} key={trainer.id} onClick={handleClick} id={trainer.id} onMouseLeave={() => setIsVisible(null)}>
+          <p>{trainer.name}</p>
+          <p>Type: {trainer.pokemon_type}</p>
+          </div>
+        } else {
+          return <div className={trainer.name + '-hidden'} onMouseEnter={() => setIsVisible(trainer.id)}></div>
+        }
+      
       })}
     </div>
   )
