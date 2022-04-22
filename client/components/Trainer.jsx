@@ -1,27 +1,39 @@
 import React, {useState} from 'react'
 import {getPokemon} from '../api/pokeApi'
 
-
+import Pokemon from './Pokemon.jsx'
 const Trainer = () => {
-  const [poke, setPoke] = useState('')
+  const [pokedata, setPokeData] = useState([])
 
   const clickHandler = () => {
     getPokemon()
       .then(data => {
-        setPoke(data)
+        // //TODO
+        // if (pokedata.length > 5) {
+          //setPokedata[pokedata[0]=data] 
+          //check array method to replace first pos and shift others up
+        
+          // } else {
+          //setPokeData([...pokedata,data])
+  //       }
+  //       console.log(data);
+  //       setPokeData([...pokedata, data])
+  //       console.log(pokedata);
+  //     }).catch((err) => {
+  //       console.error(err.message)
+  //     })
+  // }
       }).catch((err) => {
-        console.error(err.message)
+        console.log(err)
       })
-  }
-
-  //${name}
+    }
+    
   return (
-    <>
-    <h2>Name: </h2>
-    <button onClick={clickHandler}>Get your Pokemon! </button>
-    {poke && <h3>{poke.name}</h3>}
-    {poke && <img src={poke.sprites.front_default}></img>}
-    </>
+    <div>
+      <h2>Name: </h2>
+      <button onClick={clickHandler}>Get your Pokemon! </button>
+      <Pokemon pokedata={pokedata}/>
+    </div>
   
   )
 }

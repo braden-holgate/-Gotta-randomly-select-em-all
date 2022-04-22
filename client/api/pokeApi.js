@@ -10,12 +10,12 @@ const getNumber = (min, max) => {
 
 export function getPokemon() {
   const id = getNumber(1, 151)
-  return request.get(pokemonUrl + id).then((resp) => {
-    return resp.body
-  })
-  // .catch((err) => {
-  //   if (err.response.statusCode === 404) {
-  //
-  //   }
-  // })
+  return request
+    .get(pokemonUrl + id)
+    .then((resp) => {
+      return resp.body
+    })
+    .catch((err) => {
+      console.log(err.message)
+    })
 }
